@@ -1,0 +1,1239 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="signature.svg" type="image/x-icon">
+<title>Charte Graphique - Lycée L'Oiselet</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --vert: #1A4D3A;
+    --vert-vif: #2E7D58;
+    --or: #D4922A;
+    --or-clair: #F2B84B;
+    --corail: #C94F3A;
+    --creme: #F6F3EC;
+    --blanc: #FDFCF9;
+    --noir: #1A1A18;
+    --gris: #6B6B65;
+    --gris-clair: #E8E5DC;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Instrument Sans', sans-serif;
+    background: var(--blanc);
+    color: var(--noir);
+    overflow-x: hidden;
+  }
+
+  /* ── COVER ── */
+  .cover {
+    min-height: 100vh;
+    background: var(--vert);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .cover::before {
+    content: '';
+    position: absolute;
+    width: 600px; height: 600px;
+    border-radius: 50%;
+    background: var(--vert-vif);
+    opacity: 0.3;
+    top: -200px; right: -100px;
+  }
+
+  .cover-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 80px;
+    z-index: 2;
+  }
+
+  .cover-label {
+    font-family: 'Syne', sans-serif;
+    font-size: 11px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--or-clair);
+    margin-bottom: 40px;
+  }
+
+  .cover-title {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(52px, 6vw, 88px);
+    font-weight: 700;
+    text-transform: uppercase;
+    line-height: 0.95;
+    color: var(--blanc);
+    margin-bottom: 32px;
+  }
+
+  .cover-title em {
+    font-style: normal;
+    color: var(--or-clair);
+  }
+
+  .cover-meta {
+    font-size: 13px;
+    color: rgba(255,255,255,0.5);
+    letter-spacing: 0.5px;
+  }
+
+  .cover-right {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+    padding: 80px;
+  }
+
+  /* ── MAIN LOGO IMAGE ── */
+  .logo-hero img {
+    width: 320px;
+    height: 320px;
+    filter: drop-shadow(0 24px 80px rgba(0,0,0,0.35));
+  }
+
+  /* ── NAV TABS ── */
+  .nav-tabs {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: var(--blanc);
+    border-bottom: 1px solid var(--gris-clair);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0;
+  }
+
+  .nav-tab {
+    padding: 18px 20px;
+    font-family: 'Syne', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--gris);
+    cursor: pointer;
+    white-space: nowrap;
+    border-bottom: 2px solid transparent;
+    transition: all 0.2s;
+    text-decoration: none;
+  }
+
+  .nav-tab:hover, .nav-tab.active {
+    color: var(--vert);
+    border-bottom-color: var(--vert);
+  }
+
+  /* ── SECTION LAYOUT ── */
+  section {
+    padding: 120px 80px;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+  .section-header {
+    display: flex;
+    align-items: baseline;
+    gap: 24px;
+    margin-bottom: 80px;
+    border-bottom: 1px solid var(--gris-clair);
+    padding-bottom: 32px;
+  }
+
+  .section-number {
+    font-family: 'Syne', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    color: var(--or);
+    text-transform: uppercase;
+  }
+
+  .section-title {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(32px, 4vw, 52px);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    line-height: 1;
+    color: var(--noir);
+  }
+
+  /* ── INTRO ── */
+  .intro-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: start;
+  }
+
+  .intro-text {
+    font-size: 18px;
+    line-height: 1.7;
+    color: var(--gris);
+  }
+
+  .intro-text strong {
+    color: var(--noir);
+    font-weight: 600;
+  }
+
+  .intro-values {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .value-item {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+  }
+
+  .value-number {
+    font-family: 'Syne', sans-serif;
+    font-size: 48px;
+    font-weight: 800;
+    color: var(--gris-clair);
+    line-height: 1;
+    flex-shrink: 0;
+  }
+
+  .value-content h4 {
+    font-family: 'Syne', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--vert);
+    margin-bottom: 6px;
+  }
+
+  .value-content p {
+    font-size: 14px;
+    color: var(--gris);
+    line-height: 1.5;
+  }
+
+  /* ── COLORS ── */
+  .color-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 16px;
+    margin-bottom: 60px;
+  }
+
+  .color-card {
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  }
+
+  .color-swatch {
+    height: 140px;
+    position: relative;
+  }
+
+  .color-swatch::after {
+    content: attr(data-hex);
+    position: absolute;
+    bottom: 12px;
+    left: 16px;
+    font-family: 'Syne', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    opacity: 0.7;
+  }
+
+  .color-info {
+    padding: 16px;
+    background: white;
+    border: 1px solid var(--gris-clair);
+    border-top: none;
+    border-radius: 0 0 12px 12px;
+  }
+
+  .color-name {
+    font-family: 'Syne', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--noir);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 4px;
+  }
+
+  .color-code {
+    font-size: 11px;
+    color: var(--gris);
+    font-family: monospace;
+  }
+
+  .color-usage {
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+
+  .usage-card {
+    border-radius: 12px;
+    padding: 32px;
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  .usage-card h4 {
+    font-family: 'Syne', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+    opacity: 0.6;
+  }
+
+  /* ── LOGO SECTION ── */
+  .logo-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: start;
+  }
+
+  .logo-construction {
+    background: var(--creme);
+    border-radius: 20px;
+    padding: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .logo-variants {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-top: 60px;
+  }
+
+  .logo-variant {
+    border-radius: 12px;
+    padding: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .logo-variant-label {
+    font-family: 'Syne', sans-serif;
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+
+  .logo-interdits {
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+
+  .interdit-item {
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid var(--gris-clair);
+  }
+
+  .interdit-preview {
+    padding: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+
+  .interdit-preview::after {
+    content: '';
+    position: absolute;
+    inset: 12px;
+    border: 3px solid var(--corail);
+    border-radius: 8px;
+    opacity: 0.8;
+  }
+
+  .interdit-x {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .interdit-x svg {
+    width: 40px;
+    height: 40px;
+    opacity: 0.7;
+  }
+
+  .interdit-label {
+    padding: 12px 16px;
+    font-size: 12px;
+    color: var(--corail);
+    font-family: 'Syne', sans-serif;
+    font-weight: 600;
+    letter-spacing: 1px;
+    border-top: 1px solid var(--gris-clair);
+    text-align: center;
+  }
+
+  /* ── TYPOGRAPHY ── */
+  .typo-showcase {
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+  }
+
+  .typo-row {
+    display: grid;
+    grid-template-columns: 160px 1fr;
+    gap: 40px;
+    align-items: baseline;
+    padding-bottom: 48px;
+    border-bottom: 1px solid var(--gris-clair);
+  }
+
+  .typo-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .typo-role {
+    font-family: 'Syne', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--or);
+  }
+
+  .typo-spec {
+    font-size: 12px;
+    color: var(--gris);
+    line-height: 1.6;
+  }
+
+  .typo-spec code {
+    background: var(--creme);
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-family: monospace;
+    font-size: 11px;
+    color: var(--vert);
+  }
+
+  /* ── PAPETERIE ── */
+  .papeterie-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+  }
+
+  .doc-preview {
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 8px 40px rgba(0,0,0,0.12);
+  }
+
+  .doc-preview-inner {
+    padding: 48px 40px;
+    background: white;
+    border: 1px solid var(--gris-clair);
+    border-radius: 16px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+    max-width: 100%;
+  }
+
+  /* En-tête : bloc logo + académie responsive */
+  .entete-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 32px;
+    gap: 20px;
+  }
+
+  .entete-header img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* Kakemono : dimensions responsive */
+  .kakemono-preview {
+    width: 100%;
+    max-width: 700px;
+    aspect-ratio: 16 / 9;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid var(--gris-clair);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+    overflow: hidden;
+  }
+
+  .kakemono-preview img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .doc-download {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .doc-download:hover .doc-preview-inner {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 40px rgba(0,0,0,0.16);
+    border-color: rgba(26,77,58,0.25);
+    cursor: pointer;
+  }
+
+  .doc-download:hover .kakemono-preview {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 40px rgba(0,0,0,0.16);
+    border-color: rgba(26,77,58,0.25);
+    cursor: pointer;
+  }
+
+  .doc-header-bar {
+    height: 6px;
+    border-radius: 4px;
+    background: var(--vert);
+    margin-bottom: 32px;
+  }
+
+  /* ── DIGITAL ── */
+  .digital-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+
+  .digital-card {
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+  }
+
+  .digital-card-header {
+    padding: 24px;
+    font-family: 'Syne', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+
+  .digital-card-body {
+    padding: 24px;
+    background: white;
+    border: 1px solid var(--gris-clair);
+    border-top: none;
+    border-radius: 0 0 16px 16px;
+    font-size: 13px;
+    color: var(--gris);
+    line-height: 1.6;
+  }
+
+  /* ── DIVIDER PAGE ── */
+  .chapter-break {
+    min-height: 40vh;
+    display: flex;
+    align-items: flex-end;
+    padding: 80px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .chapter-break-number {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(120px, 18vw, 220px);
+    font-weight: 800;
+    line-height: 0.85;
+    position: absolute;
+    right: 60px;
+    bottom: -20px;
+    opacity: 0.06;
+    color: white;
+    user-select: none;
+  }
+
+  .chapter-break-title {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(32px, 5vw, 64px);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: white;
+    z-index: 2;
+    position: relative;
+  }
+
+  /* ── INLINE LOGO ── */
+  .logo-inline {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .logo-inline img {
+    width: 220px;
+    height: 56px;
+  }
+
+  .logo-inline-text {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: 18px;
+    line-height: 1.1;
+    color: var(--vert);
+  }
+
+  .logo-inline-text span {
+    display: block;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gris);
+  }
+
+  /* footer */
+  .footer {
+    background: var(--vert);
+    padding: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .footer p {
+    color: rgba(255,255,255,0.4);
+    font-size: 13px;
+  }
+
+  /* ── TABLET & DESKTOP : menu sur une ligne ── */
+  @media (min-width: 769px) {
+    .nav-tabs { flex-wrap: nowrap; }
+  }
+
+  @media (max-width: 900px) {
+    .cover { grid-template-columns: 1fr; }
+    .cover-left { order: 2; padding: 48px 24px; }
+    .cover-right { order: 1; padding: 24px; justify-content: center; align-items: center; }
+    .cover-right .logo-hero img { width: 200px; height: 200px; }
+    section { padding: 60px 24px; }
+    .section-header { flex-wrap: wrap; gap: 12px; margin-bottom: 48px; }
+    .section-title { font-size: clamp(26px, 5vw, 40px); }
+    .color-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+    .color-usage { grid-template-columns: 1fr; }
+    .intro-grid, .logo-grid, .papeterie-grid { grid-template-columns: 1fr; gap: 40px; }
+    .logo-variants { grid-template-columns: 1fr; }
+    .logo-interdits { grid-template-columns: 1fr; }
+    .logo-construction { padding: 32px 24px; }
+    .typo-row { grid-template-columns: 1fr; gap: 16px; }
+    .typo-meta { order: 1; }
+    .digital-grid { grid-template-columns: 1fr; }
+    .digital-card-grid { grid-template-columns: 1fr !important; }
+    .chapter-break { padding: 48px 24px; min-height: 30vh; }
+    .chapter-break-number { right: 24px; font-size: clamp(80px, 20vw, 160px); }
+    .footer { flex-direction: column; gap: 24px; padding: 48px 24px; text-align: center; }
+    .logo-inline { justify-content: center; }
+    .doc-preview-inner { padding: 28px 20px; }
+    .entete-header { flex-wrap: nowrap; margin-bottom: 24px; }
+    .kakemono-wrap { padding: 0; }
+    .kakemono-preview { max-width: 100%; }
+  }
+
+  /* ── MOBILE : menu compact, grilles en colonne ── */
+  @media (max-width: 768px) {
+    .nav-tabs { justify-content: flex-start; padding: 0 12px; }
+    .nav-tab { padding: 12px 10px; font-size: 10px; letter-spacing: 1px; }
+    .cover-left { padding: 32px 20px; }
+    .cover-right { padding: 20px; }
+    .cover-right .logo-hero img { width: 160px; height: 160px; }
+    section { padding: 48px 20px; }
+    .color-grid { grid-template-columns: 1fr; }
+    .value-number { font-size: 36px; }
+    .entete-header { gap: 12px; margin-bottom: 20px; }
+    .entete-header > div { font-size: 9px; min-width: 0; }
+    .entete-header img { max-width: 90px; }
+    .doc-preview-inner { padding: 20px 16px; font-size: 11px; }
+    .kakemono-preview { border-radius: 12px; }
+    .kakemono-wrap { gap: 16px; }
+  }
+
+  /* Très petit écran : tout en colonne, espacements réduits */
+  @media (max-width: 480px) {
+    .nav-tab { padding: 10px 8px; font-size: 9px; }
+    .cover-title { font-size: clamp(36px, 10vw, 52px); }
+    .cover-right .logo-hero img { width: 140px; height: 140px; }
+    section { padding: 40px 16px; }
+    .section-header { padding-bottom: 20px; }
+    .doc-preview-inner { padding: 16px 12px; font-size: 10px; }
+    .kakemono-preview { aspect-ratio: 4 / 3; border-radius: 10px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════════════════ COVER -->
+<div class="cover">
+  <div class="cover-left">
+    <div class="cover-label">Charte Graphique · 2026</div>
+    <h1 class="cover-title">
+      Lycée<br>
+      <em>L'Oiselet</em>
+    </h1>
+    <p class="cover-meta">Identité Visuelle &amp; Graphique · Bourgoin-Jallieu</p>
+  </div>
+  <div class="cover-right">
+    <div class="logo-hero">
+      <!-- ── LOGO HERO : signature seule ── -->
+      <img src="signature.svg" alt="Signature Lycée L'Oiselet" width="320" height="320">
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════ NAV -->
+<nav class="nav-tabs">
+  <a href="#bienvenue" class="nav-tab active">01. Bienvenue</a>
+  <a href="#couleurs" class="nav-tab">02. Couleurs</a>
+  <a href="#logo" class="nav-tab">03. Logo</a>
+  <a href="#typographies" class="nav-tab">04. Typographies</a>
+  <a href="#papeterie" class="nav-tab">05. Papeterie</a>
+  <a href="#digital" class="nav-tab">06. Digital</a>
+</nav>
+
+<!-- ═══════════════════════════════════════════════════════ 01. BIENVENUE -->
+<section id="bienvenue">
+  <div class="section-header">
+    <span class="section-number">01</span>
+    <h2 class="section-title">Bienvenue</h2>
+  </div>
+  <div class="intro-grid">
+    <div class="intro-text">
+      <p>Cette charte graphique pose les <strong>fondations de la nouvelle identité visuelle du Lycée L'Oiselet</strong>. Elle définit les règles d'utilisation du logo, des couleurs, des typographies et des supports de communication.</p>
+      <br>
+      <p>L'identité s'articule autour de la figure de l'<strong>oiselet</strong>, symbole d'<strong>envol, d'apprentissage et d'émancipation</strong>. Une image forte, qui résonne avec la mission de l'établissement : accompagner chaque élève dans son développement personnel et académique.</p>
+      <br>
+      <p>La palette s'appuie sur un <strong>vert profond ancré dans le territoire isérois</strong>, associé à un <strong>or chaleureux</strong> évoquant l'excellence et l'ambition.</p>
+    </div>
+    <div class="intro-values">
+      <div class="value-item">
+        <div class="value-number">01</div>
+        <div class="value-content">
+          <h4>Envol</h4>
+          <p>L'oiselet prend son envol. L'identité traduit cette énergie positive vers l'avenir et l'épanouissement.</p>
+        </div>
+      </div>
+      <div class="value-item">
+        <div class="value-number">02</div>
+        <div class="value-content">
+          <h4>Ancrage</h4>
+          <p>Profondément lié au territoire de Bourgoin-Jallieu et à l'Isère, l'établissement est un pilier de la communauté locale.</p>
+        </div>
+      </div>
+      <div class="value-item">
+        <div class="value-number">03</div>
+        <div class="value-content">
+          <h4>Excellence</h4>
+          <p>Un lycée tête de cordée, engagé, avec une offre de formation riche et des parcours d'excellence reconnus.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════ BREAK 02 -->
+<div class="chapter-break" style="background: var(--or);">
+  <div class="chapter-break-number">02</div>
+  <h2 class="chapter-break-title">Palette de<br>couleurs</h2>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════ 02. COULEURS -->
+<section id="couleurs">
+  <div class="section-header">
+    <span class="section-number">02</span>
+    <h2 class="section-title">Palette de couleurs</h2>
+  </div>
+
+  <div class="color-grid">
+    <div class="color-card">
+      <div class="color-swatch" style="background:#1A4D3A; color:rgba(255,255,255,0.6);" data-hex="#1A4D3A"></div>
+      <div class="color-info">
+        <div class="color-name">Vert Forêt</div>
+        <div class="color-code">HEX #1A4D3A · Principal</div>
+        <div class="color-code">RVB 26 · 77 · 58</div>
+        <div class="color-code">CMJN 66 · 0 · 25 · 70</div>
+      </div>
+    </div>
+    <div class="color-card">
+      <div class="color-swatch" style="background:#2E7D58; color:rgba(255,255,255,0.6);" data-hex="#2E7D58"></div>
+      <div class="color-info">
+        <div class="color-name">Vert Vif</div>
+        <div class="color-code">HEX #2E7D58 · Secondaire</div>
+        <div class="color-code">RVB 46 · 125 · 88</div>
+        <div class="color-code">CMJN 63 · 0 · 30 · 51</div>
+      </div>
+    </div>
+    <div class="color-card">
+      <div class="color-swatch" style="background:#D4922A; color:rgba(255,255,255,0.7);" data-hex="#D4922A"></div>
+      <div class="color-info">
+        <div class="color-name">Or Ambre</div>
+        <div class="color-code">HEX #D4922A · Accent</div>
+        <div class="color-code">RVB 212 · 146 · 42</div>
+        <div class="color-code">CMJN 0 · 31 · 80 · 17</div>
+      </div>
+    </div>
+    <div class="color-card">
+      <div class="color-swatch" style="background:#F2B84B; color:rgba(0,0,0,0.5);" data-hex="#F2B84B"></div>
+      <div class="color-info">
+        <div class="color-name">Or Clair</div>
+        <div class="color-code">HEX #F2B84B · Dégradé</div>
+        <div class="color-code">RVB 242 · 184 · 75</div>
+        <div class="color-code">CMJN 0 · 24 · 69 · 5</div>
+      </div>
+    </div>
+    <div class="color-card">
+      <div class="color-swatch" style="background:#F6F3EC; color:rgba(0,0,0,0.3);" data-hex="#F6F3EC"></div>
+      <div class="color-info">
+        <div class="color-name">Crème</div>
+        <div class="color-code">HEX #F6F3EC · Fond</div>
+        <div class="color-code">RVB 246 · 243 · 236</div>
+        <div class="color-code">CMJN 0 · 1 · 4 · 4</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="color-usage">
+    <div class="usage-card" style="background:#1A4D3A; color:white;">
+      <h4>Vert Forêt — Usage</h4>
+      <p>Fond principal des documents institutionnels, en-têtes, couvertures, éléments de navigation.</p>
+    </div>
+    <div class="usage-card" style="background:#D4922A; color:white; ">
+      <h4>Or Ambre — Usage</h4>
+      <p>Accents, titres sur fond sombre, pictogrammes, soulignements. Ne pas utiliser en grande surface sur fond blanc.</p>
+    </div>
+    <div class="usage-card" style="background:#2E7D58; color:white;">
+      <h4>Vert Vif — Usage</h4>
+      <p>Déclinaisons, icônes, boutons, aplats secondaires. Utilisable en combinaison avec le Vert Forêt.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════ BREAK 03 -->
+<div class="chapter-break" style="background: var(--vert);">
+  <div class="chapter-break-number">03</div>
+  <h2 class="chapter-break-title">Le<br>Logo</h2>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════ 03. LOGO -->
+<section id="logo">
+  <div class="section-header">
+    <span class="section-number">03</span>
+    <h2 class="section-title">Le Logo</h2>
+  </div>
+
+  <div class="logo-grid">
+    <div>
+      <p style="font-size:16px; line-height:1.7; color:var(--gris); margin-bottom:32px;">
+        Le logo associe l'<strong style="color:var(--noir)">oiselet en flat design</strong>, figure centrale de l'identité, avec une typographie institutionnelle sobre et affirmée. La silhouette de l'oiseau est construite à partir de formes géométriques simples qui évoquent la légèreté et l'envol.
+      </p>
+      <p style="font-size:16px; line-height:1.7; color:var(--gris); margin-bottom:40px;">
+        Les ailes sont <strong style="color:var(--noir)"> en vert profond</strong>. Seul le <strong style="color:var(--noir)">bec est doré</strong>. Le corps en <strong style="color:var(--noir)">vert</strong> ancre l'établissement dans son territoire.
+      </p>
+
+      <!-- Logo construction guide -->
+      <div style="background:var(--creme); border-radius:16px; padding:32px;">
+        <div style="font-family:'Syne',sans-serif; font-size:11px; letter-spacing:3px; text-transform:uppercase; color:var(--or); margin-bottom:20px;">Construction</div>
+        <div style="display:grid; gap:12px; font-size:13px; color:var(--gris); line-height:1.6;">
+          <div>Taille minimale print : <strong style="color:var(--noir)">25mm de hauteur</strong></div>
+          <div>Taille minimale digital : <strong style="color:var(--noir)">64px de hauteur</strong></div>
+          <div>Format recommandé : <strong style="color:var(--noir)">SVG ou EPS vectoriel</strong></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Logo display -->
+    <div class="logo-construction">
+      <!-- FULL LOGO: logo complet SVG -->
+      <div style="display:flex; flex-direction:column; align-items:center; gap:24px;">
+        <img src="logo_lycee_loiselet.svg" alt="Logo Lycée L'Oiselet" width="220" height="220">
+      </div>
+    </div>
+  </div>
+
+  <!-- Variants -->
+  <div style="margin-top:60px;">
+    <div style="font-family:'Syne',sans-serif; font-size:12px; font-weight:700; letter-spacing:3px; text-transform:uppercase; color:var(--gris); margin-bottom:24px;">Déclinaisons</div>
+    <div class="logo-variants">
+
+      <!-- Version principale -->
+      <div class="logo-variant" style="background:var(--creme);">
+        <div style="display:flex; align-items:center; gap:16px;">
+          <img src="logo_lycee_loiselet.svg" alt="Logo Lycée L'Oiselet" width="220" height="72">
+        </div>
+        <div class="logo-variant-label" style="color:var(--gris);">Version classique</div>
+      </div>
+
+      <!-- Version fond vert -->
+      <div class="logo-variant" style="background:var(--vert);">
+        <div style="display:flex; align-items:center; gap:16px;">
+          <img src="logo_lycee_loiselet_monochrome_blanc.svg" alt="Logo Lycée L'Oiselet" width="220" height="72">
+        </div>
+        <div class="logo-variant-label" style="color:rgba(255,255,255,0.5);">Version fond vert</div>
+      </div>
+
+      <!-- Version monochrome noir -->
+      <div class="logo-variant" style="background:white; border:1px solid var(--gris-clair);">
+        <div style="display:flex; align-items:center; gap:16px;">
+          <img src="logo_lycee_loiselet_monochrome_noir.svg" alt="Logo Lycée L'Oiselet" width="220" height="72">
+        </div>
+        <div class="logo-variant-label" style="color:var(--gris);">Version monochrome</div>
+      </div>
+
+      <!-- Version fond noir -->
+      <div class="logo-variant" style="background:#000000;">
+        <div style="display:flex; align-items:center; gap:16px;">
+          <img src="logo_lycee_loiselet_typoblanc.svg" alt="Logo Lycée L'Oiselet" width="220" height="72">
+        </div>
+        <div class="logo-variant-label" style="color:rgba(255,255,255,0.6);">Version fond noir</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Interdits -->
+  <div style="margin-top:60px;">
+    <div style="font-family:'Syne',sans-serif; font-size:12px; font-weight:700; letter-spacing:3px; text-transform:uppercase; color:var(--corail); margin-bottom:24px;">Interdits</div>
+    <div class="logo-interdits">
+      <div class="interdit-item">
+        <div class="interdit-preview" style="background:#f4f0e8; height:100px;">
+          <div style="font-family:'Syne',sans-serif; font-weight:700; font-size:12px; color:var(--vert); opacity:0.4; transform:rotate(-15deg); text-transform:uppercase;"><div style="display:flex; align-items:center; gap:16px;">
+            <img src="logo_lycee_loiselet.svg" alt="Logo Lycée L'Oiselet" width="100" height="72">
+          </div></div>
+          <div class="interdit-x"><svg viewBox="0 0 40 40"><line x1="5" y1="5" x2="35" y2="35" stroke="#C94F3A" stroke-width="3.5" stroke-linecap="round"/><line x1="35" y1="5" x2="5" y2="35" stroke="#C94F3A" stroke-width="3.5" stroke-linecap="round"/></svg></div>
+        </div>
+        <div class="interdit-label">Ne pas faire pivoter</div>
+      </div>
+      <div class="interdit-item">
+        <div class="interdit-preview" style="background: linear-gradient(135deg, #ff6b6b, #feca57, #48dbfb); height:100px;">
+          <div style="font-family:'Syne',sans-serif; font-weight:700; font-size:12px; color:white; opacity:0.6; text-transform:uppercase;"><div style="display:flex; align-items:center; gap:16px;">
+            <img src="logo_lycee_loiselet.svg" alt="Logo Lycée L'Oiselet" width="100" height="72">
+          </div></div>
+          <div class="interdit-x"><svg viewBox="0 0 40 40"><line x1="5" y1="5" x2="35" y2="35" stroke="#C94F3A" stroke-width="3.5" stroke-linecap="round"/><line x1="35" y1="5" x2="5" y2="35" stroke="#C94F3A" stroke-width="3.5" stroke-linecap="round"/></svg></div>
+        </div>
+        <div class="interdit-label">Ne pas appliquer sur fond parasite</div>
+      </div>
+      <div class="interdit-item">
+        <div class="interdit-preview" style="background:#f4f0e8; height:100px;">
+          <div style="font-family:'Arial',sans-serif; font-weight:900; font-size:11px; color:var(--or); text-transform:uppercase; opacity:0.6;">LYCÉE L'OISELET</div>
+          <div class="interdit-x"><svg viewBox="0 0 40 40"><line x1="5" y1="5" x2="35" y2="35" stroke="#C94F3A" stroke-width="3.5" stroke-linecap="round"/><line x1="35" y1="5" x2="5" y2="35" stroke="#C94F3A" stroke-width="3.5" stroke-linecap="round"/></svg></div>
+        </div>
+        <div class="interdit-label">Ne pas substituer la typographie</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════ BREAK 04 -->
+<div class="chapter-break" style="background: var(--noir);">
+  <div class="chapter-break-number">04</div>
+  <h2 class="chapter-break-title">Typo&shy;graphies</h2>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════ 04. TYPO -->
+<section id="typographies">
+  <div class="section-header">
+    <span class="section-number">04</span>
+    <h2 class="section-title">Typographies</h2>
+  </div>
+
+  <p style="font-size:16px; line-height:1.7; color:var(--gris); max-width:640px; margin-bottom:80px;">
+    L'identité typographique repose sur <strong style="color:var(--noir)">Syne</strong>, une géométrique française contemporaine aux lettres architecturées, associée à <strong style="color:var(--noir)">Instrument Sans</strong> pour les textes courants. Une paire fonctionnelle et distincte.
+  </p>
+
+  <div class="typo-showcase">
+
+    <div class="typo-row">
+      <div class="typo-meta">
+        <div class="typo-role">Titrage</div>
+        <div class="typo-spec">
+          Syne Bold Uppercase<br>
+          <code>font-weight: 700</code><br>
+          <code>letter-spacing: 3px</code><br>
+          <code>text-transform: uppercase</code><br>
+          <code>line-height: 1.05</code>
+        </div>
+      </div>
+      <div style="font-family:'Syne',sans-serif; font-size:clamp(48px,8vw,96px); font-weight:700; line-height:1.05; letter-spacing:3px; text-transform:uppercase; color:var(--noir);">LYCÉE<br>L'OISELET</div>
+    </div>
+
+    <div class="typo-row">
+      <div class="typo-meta">
+        <div class="typo-role">Sous-titres</div>
+        <div class="typo-spec">
+          Syne Regular<br>
+          <code>font-weight: 400</code><br>
+          <code>letter-spacing: 2px</code><br>
+          <code>text-transform: uppercase</code>
+        </div>
+      </div>
+      <div style="font-family:'Syne',sans-serif; font-size:clamp(18px,3vw,28px); font-weight:400; letter-spacing:3px; text-transform:uppercase; color:var(--vert);">Bienvenue au lycée · Bourgoin-Jallieu</div>
+    </div>
+
+    <div class="typo-row">
+      <div class="typo-meta">
+        <div class="typo-role">Corps de texte</div>
+        <div class="typo-spec">
+          Instrument Sans Regular<br>
+          <code>font-size: 15-18px</code><br>
+          <code>line-height: 1.7</code><br>
+          <code>font-weight: 400</code>
+        </div>
+      </div>
+      <div style="font-family:'Instrument Sans',sans-serif; font-size:18px; line-height:1.7; color:var(--gris); max-width:560px;">Le Lycée L'Oiselet accompagne chaque élève dans son développement personnel et son projet d'avenir. Formation générale, technologique et professionnelle — un lycée engagé, ouvert sur le monde.</div>
+    </div>
+
+    <div class="typo-row" style="border-bottom:none;">
+      <div class="typo-meta">
+        <div class="typo-role">Labels & Légendes</div>
+        <div class="typo-spec">
+          Instrument Sans Italic<br>
+          <code>font-style: italic</code><br>
+          <code>font-size: 12-13px</code><br>
+          <code>letter-spacing: 1px</code>
+        </div>
+      </div>
+      <div style="font-family:'Instrument Sans',sans-serif; font-style:italic; font-size:18px; color:var(--gris);">Académie de Grenoble · Auvergne-Rhône-Alpes · Année 2024–2025</div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════ BREAK 05 -->
+<div class="chapter-break" style="background: var(--vert-vif);">
+  <div class="chapter-break-number">05</div>
+  <h2 class="chapter-break-title">Papeterie</h2>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════ 05. PAPETERIE -->
+<section id="papeterie">
+  <div class="section-header">
+    <span class="section-number">05</span>
+    <h2 class="section-title">Papeterie</h2>
+  </div>
+
+  <p style="font-size:16px; line-height:1.7; color:var(--gris); max-width:640px; margin-bottom:60px;">
+    Les supports papier s'appuient sur un fond <strong style="color:var(--noir)">crème</strong> pour adoucir l'image institutionnelle. La couleur est utilisée en accent structurant (bande de couleur, filets). Le logo est toujours utilisé en version couleur ou monochrome selon le fond.
+  </p>
+
+  <div class="papeterie-grid">
+
+    <!-- Lettre en-tête -->
+    <div>
+      <div style="font-family:'Syne',sans-serif; font-size:11px; letter-spacing:3px; text-transform:uppercase; color:var(--gris); margin-bottom:16px;">Papier en-tête</div>
+      <a href="Papier_en_tête.docx" download class="doc-download" title="Télécharger le modèle de papier en-tête">
+        <div class="doc-preview-inner" style="font-size:12px; color:var(--noir);">
+          <div style="height:4px; background:var(--vert); border-radius:2px; margin-bottom:28px;"></div>
+          <div class="entete-header">
+            <div>
+              <img src="logo_lycee_loiselet.svg" alt="Logo Lycée L'Oiselet" width="110" height="32">
+              <div style="font-size:10px; color:var(--gris); margin-top:8px; line-height:1.6;">Rue Vaucanson, 38300 Bourgoin-Jallieu<br>04 74 28 08 88</div>
+            </div>
+            <div style="text-align:right; font-size:10px; color:var(--gris);">
+              <div style="font-weight:600; color:var(--noir);">ACADÉMIE DE GRENOBLE</div>
+              <div>Auvergne-Rhône-Alpes</div>
+            </div>
+          </div>
+          <div style="display:flex; justify-content:space-between; margin-bottom:24px; font-size:11px; color:var(--gris);">
+            <div>Affaire suivie par :</div>
+            <div>Bourgoin-Jallieu, le <span style="border-bottom:1px solid var(--gris-clair); padding-bottom:2px;">___________</span></div>
+          </div>
+          <div style="font-size:11px; font-weight:600; color:var(--vert); margin-bottom:8px;">Objet :</div>
+          <div style="height:1px; background:var(--gris-clair); margin:20px 0;"></div>
+          <div style="display:flex; flex-direction:column; gap:6px;">
+            <div style="height:8px; background:var(--gris-clair); border-radius:2px; width:100%;"></div>
+            <div style="height:8px; background:var(--gris-clair); border-radius:2px; width:88%;"></div>
+            <div style="height:8px; background:var(--gris-clair); border-radius:2px; width:94%;"></div>
+            <div style="height:8px; background:var(--gris-clair); border-radius:2px; width:75%;"></div>
+          </div>
+          <div style="margin-top:24px; height:2px; background:var(--or); border-radius:1px; width:32px;"></div>
+        </div>
+      </a>
+    </div>
+    <!-- Kakémonos -->
+    <div>
+      <div style="font-family:'Syne',sans-serif; font-size:11px; letter-spacing:3px; text-transform:uppercase; color:var(--gris); margin-bottom:16px;">Kakémonos</div>
+      <a href="Kakemono.png" download class="doc-download" title="Télécharger le visuel du kakémono" style="text-decoration:none;">
+        <div class="kakemono-wrap" style="display:flex; flex-direction:column; gap:28px; align-items:center; width:100%;">
+          <div class="kakemono-preview">
+            <img src="Kakemono_Mockup.png" alt="Exemple de kakémono Lycée L'Oiselet">
+          </div>
+          <div style="font-size:15px; color:var(--noir); font-family:'Syne',sans-serif; text-align:center;">
+            Format recommandé&nbsp;: 80 × 200&nbsp;cm.<br>
+            <span style="color:var(--gris); font-size:12px;">Aperçu - Cliquer sur l'image pour télécharger le Kakémono</span>
+          </div>
+        </div>
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════ BREAK 06 -->
+<div class="chapter-break" style="background: var(--or);">
+  <div class="chapter-break-number">06</div>
+  <h2 class="chapter-break-title" style="color:var(--blanc);">Digital</h2>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════ 06. DIGITAL -->
+<section id="digital">
+  <div class="section-header">
+    <span class="section-number">06</span>
+    <h2 class="section-title">Déclinaisons digitales</h2>
+  </div>
+
+  <p style="font-size:16px; line-height:1.7; color:var(--gris); max-width:640px; margin-bottom:60px;">
+    Sur les supports numériques, l'identité reste cohérente avec la version print. Les formats sont adaptés aux contraintes des réseaux sociaux, du site web et des interfaces mobiles. La palette couleur garde toute sa vigueur sur écran.
+  </p>
+
+  <div class="digital-grid">
+
+    <!-- Site web -->
+    <div class="digital-card">
+      <div class="digital-card-header" style="background:var(--vert); color:white;">Site Web</div>
+      <div class="digital-card-body">
+        <div style="background:var(--vert); border-radius:8px; padding:16px; margin-bottom:12px; display:flex; justify-content:space-between; align-items:center;">
+          <div style="font-family:'Syne',sans-serif; font-weight:700; font-size:11px; color:white; text-transform:uppercase;">LYCÉE L'OISELET</div>
+          <div style="display:flex; gap:8px;">
+            <div style="font-size:9px; color:rgba(255,255,255,0.7); background:rgba(255,255,255,0.1); padding:4px 8px; border-radius:4px;">Formations</div>
+            <div style="font-size:9px; color:rgba(255,255,255,0.7); background:rgba(255,255,255,0.1); padding:4px 8px; border-radius:4px;">Vie du lycée</div>
+          </div>
+        </div>
+        <div style="background:var(--creme); border-radius:8px; padding:16px; margin-bottom:12px;">
+          <div style="font-family:'Syne',sans-serif; font-weight:700; font-size:14px; color:var(--vert); line-height:1.1; margin-bottom:8px; text-transform:uppercase;">Préparez votre<br>avenir ici.</div>
+          <div style="height:4px; width:24px; background:var(--or); border-radius:2px;"></div>
+        </div>
+        Fond crème, navigation vert foncé, accents or. Syne pour les titres, Instrument Sans pour le corps.
+      </div>
+    </div>
+
+    <!-- Réseaux sociaux -->
+    <div class="digital-card">
+      <div class="digital-card-header" style="background:var(--or); color:white;">Réseaux Sociaux</div>
+      <div class="digital-card-body">
+        <div class="digital-card-grid" style="display:grid; grid-template-columns:1fr 1fr; gap:8px; margin-bottom:12px;">
+          <div style="background:var(--vert); border-radius:8px; aspect-ratio:1; display:flex; align-items:center; justify-content:center;">
+            <div style="font-family:'Syne',sans-serif; font-weight:700; font-size:10px; color:white; text-align:center; padding:8px; line-height:1.2; text-transform:uppercase;">Post<br>carré</div>
+          </div>
+          <div style="background:var(--creme); border-radius:8px; aspect-ratio:1; display:flex; align-items:center; justify-content:center; border:1px solid var(--gris-clair);">
+            <div style="font-family:'Syne',sans-serif; font-weight:700; font-size:10px; color:var(--vert); text-align:center; padding:8px; line-height:1.2; text-transform:uppercase;">Story<br>9:16</div>
+          </div>
+        </div>
+        Format carré 1:1 pour les publications, 9:16 pour les stories. Logo toujours visible. Hashtag #LycéeLOiselet.
+      </div>
+    </div>
+
+    <!-- Email -->
+    <div class="digital-card">
+      <div class="digital-card-header" style="background:var(--vert-vif); color:white;">Signature Email</div>
+      <div class="digital-card-body">
+        <div style="border-left:3px solid var(--vert); padding-left:12px; margin-bottom:12px;">
+          <div style="font-family:'Syne',sans-serif; font-weight:700; font-size:12px; color:var(--vert);">Prénom NOM</div>
+          <div style="font-size:11px; color:var(--gris); font-style:italic; margin-bottom:6px;">Fonction · Lycée L'Oiselet</div>
+          <div style="font-size:10px; color:var(--gris);">04 74 28 08 88</div>
+          <div style="font-size:10px; color:var(--or);">lycee-oiselet.fr</div>
+        </div>
+        Signature standardisée. Police Syne pour le nom, Instrument Sans pour les coordonnées. Pas d'image embarquée.
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════ FOOTER -->
+<div class="footer">
+  <div class="logo-inline">
+    <img src="logo_lycee_loiselet_monochrome_blanc.svg" alt="Logo Lycée L'Oiselet" width="200" height="40">
+  </div>
+  <p>Charte Graphique · 2026 · Usage interne</p>
+  <p>Réalisé avec ♥ par <a href="https://robinmorand.fr/apropos.html" target="_blank" style="color:white;">Robin Morand</a></p>
+</div>
+
+<script>
+  // Activation automatique des onglets de navigation selon la section visible
+  (function() {
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.nav-tab[href^="#"]');
+
+    if (!('IntersectionObserver' in window) || !sections.length || !navLinks.length) {
+      return;
+    }
+
+    const linksById = {};
+    navLinks.forEach(link => {
+      const id = link.getAttribute('href').slice(1);
+      linksById[id] = link;
+    });
+
+    function setActive(id) {
+      navLinks.forEach(link => link.classList.remove('active'));
+      if (linksById[id]) {
+        linksById[id].classList.add('active');
+      }
+    }
+
+    const observer = new IntersectionObserver((entries) => {
+      let bestEntry = null;
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        if (!bestEntry || entry.intersectionRatio > bestEntry.intersectionRatio) {
+          bestEntry = entry;
+        }
+      });
+      if (bestEntry) {
+        const id = bestEntry.target.getAttribute('id');
+        setActive(id);
+      }
+    }, {
+      root: null,
+      threshold: [0.3, 0.6]
+    });
+
+    sections.forEach(section => observer.observe(section));
+  })();
+</script>
+
+</body>
+</html>
