@@ -98,8 +98,18 @@
   /* ── MAIN LOGO IMAGE ── */
   .logo-hero img {
     width: 320px;
-    height: 320px;
+    max-width: 100%;
+    height: auto;
     filter: drop-shadow(0 24px 80px rgba(0,0,0,0.35));
+  }
+
+  /* Logos responsive : ne jamais dépasser le conteneur */
+  #logo img,
+  .logo-construction img,
+  .logo-variant img,
+  .logo-interdits img {
+    max-width: 100%;
+    height: auto;
   }
 
   /* ── NAV TABS ── */
@@ -608,7 +618,8 @@
 
   .logo-inline img {
     width: 220px;
-    height: 56px;
+    max-width: 100%;
+    height: auto;
   }
 
   .logo-inline-text {
@@ -669,6 +680,9 @@
     .chapter-break-number { right: 24px; font-size: clamp(80px, 20vw, 160px); }
     .footer { flex-direction: column; gap: 24px; padding: 48px 24px; text-align: center; }
     .logo-inline { justify-content: center; }
+    .logo-inline img { max-width: 180px; }
+    .logo-construction img { max-width: min(100%, 320px); }
+    .logo-variant img { max-width: 160px; }
     .doc-preview-inner { padding: 28px 20px; }
     .entete-header { flex-wrap: nowrap; margin-bottom: 24px; }
     .kakemono-wrap { padding: 0; }
@@ -691,6 +705,10 @@
     .doc-preview-inner { padding: 20px 16px; font-size: 11px; }
     .kakemono-preview { border-radius: 12px; }
     .kakemono-wrap { gap: 16px; }
+    .logo-inline img { max-width: 140px; }
+    .logo-construction img { max-width: min(100%, 260px); }
+    .logo-variant img { max-width: 120px; }
+    .logo-interdits .interdit-preview img { max-width: 70px; }
   }
 
   /* Très petit écran : tout en colonne, espacements réduits */
@@ -702,6 +720,9 @@
     .section-header { padding-bottom: 20px; }
     .doc-preview-inner { padding: 16px 12px; font-size: 10px; }
     .kakemono-preview { aspect-ratio: 4 / 3; border-radius: 10px; }
+    .logo-inline img { max-width: 120px; }
+    .logo-construction img { max-width: min(100%, 220px); }
+    .logo-variant img { max-width: 100px; }
   }
 </style>
 </head>
